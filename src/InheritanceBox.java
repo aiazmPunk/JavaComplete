@@ -1,0 +1,70 @@
+
+public class InheritanceBox {
+
+	public static void main(String[] args) {
+
+		BoxWeight myBox1 = new BoxWeight(10, 20, 15, 34.3);
+		BoxWeight myBox2 = new BoxWeight(2, 3, 4, 0.076);
+		double vol;
+
+		System.out.println("Volume of box1 is : " + myBox1.volume());
+		System.out.println("Weight of box1 is :" + myBox1.weight);
+
+		System.out.println();
+
+		System.out.println("Volume of box2 is : " + myBox2.volume());
+		System.out.println("Weight of box2 is : " + myBox2.weight);
+	}
+}
+
+class Box2 {
+
+	double width;
+	double height;
+	double depth;
+
+	Box2(Box o) {
+		width = o.width;
+		height = o.height;
+		depth = o.depth;
+
+	}
+
+	Box2(double w, double h, double d) {
+
+		width = w;
+		height = h;
+		depth = d;
+
+	}
+
+	Box2() {
+		width = -1;
+		height = -1;
+		depth = -1;
+	}
+
+	Box2(double len) {
+		width = height = depth = len;
+
+	}
+
+	double volume() {
+		return width * height * depth;
+	}
+
+}
+
+class BoxWeight extends Box2 {
+
+	double weight;
+
+	BoxWeight(double w, double h, double d, double m) {
+		width = w;
+		height = h;
+		depth = d;
+		weight = m;
+
+	}
+
+}
